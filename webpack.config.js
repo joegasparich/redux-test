@@ -2,19 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-	entry: "./src/js/index.js",
+	entry: "./src/js/index.tsx",
 	mode: "development",
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.(t|j)sx?$/,
 				exclude: /(node_modules)/,
-				loader: "babel-loader",
-				options: { presets: ["@babel/env"] }
+				loader: "awesome-typescript-loader"
 			}
 		]
 	},
-	resolve: { extensions: ["*", ".js", ".jsx"] },
+	resolve: { extensions: [".ts", ".tsx", ".js", ".jsx"] },
 	output: {
 		path: path.resolve(__dirname, "dist/"),
 		publicPath: "/dist/",
@@ -26,5 +25,6 @@ module.exports = {
 		publicPath: "http://localhost:3000/dist/",
 		hotOnly: true
 	},
+	devtool: "source-map",
 	plugins: [new webpack.HotModuleReplacementPlugin()]
 };

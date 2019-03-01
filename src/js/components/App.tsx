@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { hot } from "react-hot-loader";
 
 import List from "./List";
 import ArticleForm from "./ArticleForm";
 
-class App extends Component {
-	render() {
+class App extends React.Component {
+	render(): JSX.Element {
 		return (
 			<div className="App">
 				<h2>Articles</h2>
