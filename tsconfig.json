@@ -9,5 +9,10 @@
 		"target": "es5", // specify ECMAScript target version
 		"allowJs": true // allow a partial TypeScript and JavaScript codebase
 	},
-	"include": ["./src/"]
+	"include": ["./src/"],
+	"forceConsistentCasingInFileNames": true,
+	"noImplicitReturns": true,
+	"no-any": true,
+	"strict": true,
+	"noUnusedLocals": true,
 }
